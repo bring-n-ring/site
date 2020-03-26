@@ -1,6 +1,9 @@
 import * as React from 'react'
 import { graphql } from 'gatsby'
-
+import '@bring-n-ring/components/base.css'
+import '@bring-n-ring/components/fonts.css'
+import { Typography } from '@bring-n-ring/components'
+import '@bring-n-ring/components/components/typography/typography.css'
 import Page from '../components/Page'
 import Container from '../components/Container'
 import IndexLayout from '../layouts'
@@ -31,7 +34,7 @@ const PageTemplate: React.FC<PageTemplateProps> = ({ data }) => (
   <IndexLayout>
     <Page>
       <Container>
-        <h1>{data.markdownRemark.frontmatter.title}</h1>
+        <Typography size="h1">{data.markdownRemark.frontmatter.title}</Typography>
         {/* eslint-disable-next-line react/no-danger */}
         <div dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} />
       </Container>
