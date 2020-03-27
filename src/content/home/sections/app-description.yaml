@@ -1,0 +1,21 @@
+---
+title: Kämpfe mit uns gegen Corona.
+body: Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore.
+btnText: Beta-Tester werden
+slides:
+  - src: https://i.ibb.co/YX9Wffc/stroer.png
+    alt: stroer
+    title: Step 1
+    description: Register
+  - src: https://i.ibb.co/fDssVDb/jung-v-matt.png
+    alt: jung-v-matt
+    title: Step 2
+    description: Register
+  - src: https://i.ibb.co/cXV07fJ/heimat.png
+    alt: heimat
+    title: Step 3
+    description: Register
+  - src: https://i.ibb.co/z2W1KqM/fischer-appelt.png
+    alt: fischer-appelt
+    title: Step 4
+    description: Register
