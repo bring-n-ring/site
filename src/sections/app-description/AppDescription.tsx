@@ -39,12 +39,13 @@ const AppDescription: React.FC<AppDescriptionProps> = ({ title, body, btnText, s
       </div>
       <div className={styles.width}>
         <Phone>
-          <IonContent className={styles.img}>
-            <IonSlides options={slideOpts} className={styles.img}>
+          <IonContent>
+            <IonSlides options={slideOpts} key="demo-phone">
               {slides.map(slide => (
                 <IonSlide>
-                  <div className={styles.img}>
-                    <img src={slide.src} alt={slide.alt} className={styles.img} />
+                  <div>
+                    Test
+                    <img src={slide.src} alt={slide.alt} />
                   </div>
                 </IonSlide>
               ))}
@@ -53,7 +54,7 @@ const AppDescription: React.FC<AppDescriptionProps> = ({ title, body, btnText, s
         </Phone>
       </div>
       <div className={styles.description}>
-        <IonSlides options={slideOpts}>
+        <IonSlides options={slideOpts} key="demo-decription">
           {slides.map(slide => (
             <IonSlide>
               <Typography className={styles.title} size="h2">

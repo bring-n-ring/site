@@ -1,10 +1,5 @@
 .width {
-  width: 400px;
-}
-
-.img {
-  width: 100%;
-  height: 100%;
+  min-width: 400px;
 }
 
 .wrap {
@@ -18,6 +13,10 @@
 .content {
   max-width: 300px;
   margin: 0 auto;
+  padding: calc(var(--ion-padding) * 10);
+  background-color: white;
+  border-top-right-radius: calc(var(--ion-padding) * 5);
+  border-bottom-right-radius: calc(var(--ion-padding) * 5);
 }
 
 .title {
@@ -28,8 +27,9 @@
 .description {
   max-width: 300px;
   margin: 0 auto;
-  background: var(--ion-color-light);
-  padding: calc(var(--ion-padding) * 5);
+  background: var(--ion-color-medium);
+  padding: calc(var(--ion-padding) * 10);
+  border-radius: calc(var(--ion-padding) * 5);
 }
 
 @media (min-width: var(--media-size-md)) {
