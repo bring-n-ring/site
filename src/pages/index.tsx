@@ -9,9 +9,9 @@ import ourMission from '../content/home/sections/our-mission.yaml'
 const IndexPage = () => (
   <IndexLayout>
     <Page>
-      <OurMission {...ourMission} />
       <Entry {...entryData} />
       <Insta {...instaData} />
+      <OurMission {...ourMission} />
     </Page>
   </IndexLayout>
 )

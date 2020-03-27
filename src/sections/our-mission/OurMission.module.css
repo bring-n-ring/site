@@ -21,7 +21,16 @@
   }
 }
 
+@media (min-width: 1200px) {
+  .grid {
+    height: 450px;
+  }
+}
+
 @media (min-width: 1430px) {
+  .grid {
+    height: 500px;
+  }
   .title {
     font-size: 70px;
   }
@@ -99,26 +108,29 @@
 
   .right {
     padding-right: calc(var(--base-spacing) * 10);
-    max-width: 350px;
+    max-width: 400px;
   }
 
   .sponsorGrid {
-    display: grid;
     height: 200px;
-    grid-template-columns: auto auto auto;
-    grid-template-rows: auto auto auto;
-    align-items: center;
   }
 }
 
 @media (min-width: 1200px) {
   .right {
     padding-right: calc(var(--base-spacing) * 15);
+    max-width: 450px;
+  }
+  .sponsorGrid {
+    height: 150px;
+    grid-template-columns: auto auto auto auto;
+    grid-template-rows: auto auto;
   }
 }
 
 @media (min-width: 1430px) {
   .right {
     padding-right: calc(var(--base-spacing) * 20);
+    max-width: 510px;
   }
 }

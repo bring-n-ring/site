@@ -20,7 +20,6 @@ type Props = {
 }
 
 export const OurMission: React.FC<Props> = ({ left, right }) => {
-  console.log(right)
   return (
     <div className={styles.grid}>
       <div className={styles.gridItemLeft}>
@@ -42,7 +41,7 @@ export const OurMission: React.FC<Props> = ({ left, right }) => {
           <Typography size="p">{right.sponsorIntroduction}:</Typography>
           <div className={styles.sponsorGrid}>
             {right.sponsors.map(sponsor => (
-              <div>
+              <div key={sponsor.src}>
                 <img src={sponsor.src} alt={sponsor.alt} />
               </div>
             ))}
