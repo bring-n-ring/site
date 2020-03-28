@@ -97,17 +97,21 @@ const AppDescription: React.FC<AppDescriptionProps> = ({ title, body, btnText, s
         <IonSlides options={slideOpts} key="demo-decription" ref={sliderDescription} onIonSlideDidChange={descriptionSlideChanged}>
           {slides.map(slide => (
             <IonSlide key={slide.title}>
-              <Typography className={styles.title} size="h2">
-                {slide.title}
-              </Typography>
-              <Typography className={styles.body} size="p">
-                {slide.description}
-              </Typography>
+              <div>
+                <Typography className={styles.title} size="h2">
+                  {slide.title}
+                </Typography>
+                <Typography className={styles.body} size="p">
+                  {slide.description}
+                </Typography>
+              </div>
             </IonSlide>
           ))}
         </IonSlides>
-        <IonIcon onClick={onPrev} color="primary" icon={arrowBack} />
-        <IonIcon onClick={onNext} color="primary" icon={arrowForward} />
+        <div className={styles.sliderControl}>
+          <IonIcon className={styles.iconLeft} onClick={onPrev} color="primary" icon={arrowBack} />
+          <IonIcon className={styles.iconRight} onClick={onNext} color="primary" icon={arrowForward} />
+        </div>
       </div>
     </div>
   )
