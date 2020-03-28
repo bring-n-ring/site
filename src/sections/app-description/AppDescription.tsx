@@ -64,17 +64,20 @@ const AppDescription: React.FC<AppDescriptionProps> = ({ title, body, btnText, s
   return (
     <div className={styles.wrap}>
       <div className={styles.content}>
-        <Typography className={styles.title} color="primary" size="h1">
-          {title}
-        </Typography>
-        <Typography className={styles.body} size="p">
-          {body}
-        </Typography>
-        <div className={styles.alignCenter}>
-          <IonButton>{btnText}</IonButton>
+        <div className={styles.contentText}>
+          <Typography className={styles.title} color="primary" size="h1">
+            {title}
+          </Typography>
+          <Typography className={styles.body} size="p">
+            {body}
+          </Typography>
+          <div className={styles.alignCenter}>
+            <IonButton>{btnText}</IonButton>
+          </div>
         </div>
+        <div className={styles.contentDeco} />
       </div>
-      <div className={styles.width}>
+      <div className={styles.phone}>
         <Phone>
           <IonContent>
             <IonSlides options={slideOptsPhone} key="demo-phone" ref={sliderPhone} onIonSlideDidChange={phoneSlideChanged}>
