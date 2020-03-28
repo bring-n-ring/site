@@ -18,7 +18,13 @@
   border-top-right-radius: calc(var(--ion-padding) * 5);
   border-bottom-right-radius: calc(var(--ion-padding) * 5);
 }
-
+.phoneSlider {
+  align-items: center;
+  justify-content: center;
+}
+.phoneSlide {
+  width: 100% !important;
+}
 .title {
   font-size: 40px;
   margin-bottom: -12px;

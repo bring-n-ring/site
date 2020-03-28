@@ -4,6 +4,12 @@ import * as React from 'react'
 import Phone from '../../components/phone/Phone'
 import styles from './app-description.module.css'
 
+const slideOptsPhone = {
+  initialSlide: 0,
+  speed: 400,
+  slideClass: styles.phoneSlide,
+  slideActiveClass: styles.phoneSlider
+}
 const slideOpts = {
   initialSlide: 1,
   speed: 400
@@ -40,9 +46,9 @@ const AppDescription: React.FC<AppDescriptionProps> = ({ title, body, btnText, s
       <div className={styles.width}>
         <Phone>
           <IonContent>
-            <IonSlides options={slideOpts} key="demo-phone">
+            <IonSlides options={slideOptsPhone} key="demo-phone">
               {slides.map(slide => (
-                <IonSlide>
+                <IonSlide className={styles.phoneSlide} key={slide.src}>
                   <div>
                     Test
                     <img src={slide.src} alt={slide.alt} />
@@ -56,7 +62,7 @@ const AppDescription: React.FC<AppDescriptionProps> = ({ title, body, btnText, s
       <div className={styles.description}>
         <IonSlides options={slideOpts} key="demo-decription">
           {slides.map(slide => (
-            <IonSlide>
+            <IonSlide key={slide.title}>
               <Typography className={styles.title} size="h2">
                 {slide.title}
               </Typography>
