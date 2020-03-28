@@ -28,9 +28,10 @@ export type AppDescriptionProps = {
       description: string
     }
   ]
+  btnProps: HTMLDivElement
 }
 
-const AppDescription: React.FC<AppDescriptionProps> = ({ title, body, btnText, slides }) => {
+const AppDescription: React.FC<AppDescriptionProps> = ({ title, body, btnText, slides, btnProps }) => {
   const sliderPhone = React.createRef<HTMLIonSlidesElement>()
   const sliderDescription = React.createRef<HTMLIonSlidesElement>()
   const onNext = () => {
@@ -72,7 +73,7 @@ const AppDescription: React.FC<AppDescriptionProps> = ({ title, body, btnText, s
             {body}
           </Typography>
           <div className={styles.alignCenter}>
-            <IonButton>{btnText}</IonButton>
+            <IonButton {...btnProps}>{btnText}</IonButton>
           </div>
         </div>
         <div className={styles.contentDeco} />
@@ -82,9 +83,9 @@ const AppDescription: React.FC<AppDescriptionProps> = ({ title, body, btnText, s
           <IonContent>
             <IonSlides options={slideOptsPhone} key="demo-phone" ref={sliderPhone} onIonSlideDidChange={phoneSlideChanged}>
               {slides.map(slide => (
-                <IonSlide className={styles.phoneSlide} key={slide.src}>
-                  <div>
-                    <img src={slide.src} alt={slide.alt} />
+                <IonSlide className={styles.phoneSlide} key={slide.alt}>
+                  <div className={styles.phoneSlide}>
+                    <img src={slide.src} alt={slide.alt} className={styles.phoneSlide} />
                   </div>
                 </IonSlide>
               ))}

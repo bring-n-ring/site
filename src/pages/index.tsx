@@ -1,11 +1,11 @@
-import React, { useState, createRef } from 'react'
+import React, { createRef, useState } from 'react'
+import { HubspotForm } from '../components/hubspot-form/HubspotForm'
 import Page from '../components/Page'
+import content from '../content/home/general.yml'
 import appDescriptionData from '../content/home/sections/app-description.yaml'
 import entryData from '../content/home/sections/entry.yaml'
 import instaData from '../content/home/sections/insta.yaml'
 import ourMission from '../content/home/sections/our-mission.yaml'
-import content from '../content/home/general.yml'
-import { HubspotForm } from '../components/hubspot-form/HubspotForm'
 import IndexLayout from '../layouts'
 import { Entry, Insta, OurMission } from '../sections'
 import AppDescription from '../sections/app-description/AppDescription'
@@ -27,9 +27,9 @@ const IndexPage = () => {
       <Page>
         <Entry linkProps={{ onclick: scrollToSecond }} btnProps={{ onclick: onClickShowForm }} {...entryData} />
         <div ref={$second}>
-          <Insta {...instaData} />
+          <AppDescription {...appDescriptionData} btnProps={{ onclick: onClickShowForm }} />
         </div>
-        <AppDescription {...appDescriptionData} />
+        <Insta {...instaData} />
         <OurMission {...ourMission} />
         <HubspotForm onClose={onClickHideForm} title={content.formTitle} body={content.formBody} visible={formVisible} />
       </Page>
