@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { Typography, Spacer, IonButton } from '@bring-n-ring/components'
 import '@bring-n-ring/components/css/ion-button.css'
+import '@bring-n-ring/components/css/typography.css'
 import { IonRouterLink } from '@ionic/react'
 import styles from './entry.module.css'
 import { MainImage, SideImage } from './components'
@@ -12,29 +13,39 @@ export type EntryProps = {
   btnText: string
   linkText: string
   sponsorsTitle: string
-  sponsors: Array<{
+  btnProps: HTMLDivElement
+  linkProps: HTMLAnchorElement
+  sponsors?: Array<{
     src: string
     alt: string
   }>
 }
 
-export const Entry: React.FC<EntryProps> = ({ title, slug, body, btnText, linkText, sponsorsTitle, sponsors }) => {
+export const Entry: React.FC<EntryProps> = ({
+  title,
+  slug,
+  body,
+  btnText,
+  linkText,
+  sponsorsTitle,
+  sponsors = [],
+  btnProps,
+  linkProps
+}) => {
   return (
     <div className={`${styles.wrap} md`}>
       <div className={styles.content}>
         <Typography className={styles.title} color="primary" size="h1">
           {title}
         </Typography>
-        <Typography className={styles.subTitle} size="h4">
-          {slug}
-        </Typography>
+        <Typography size="h4">{slug}</Typography>
         <Typography className={styles.body} size="p">
           {body}
         </Typography>
         <div className={styles.alignCenter}>
-          <IonButton>{btnText}</IonButton>
+          <IonButton {...btnProps}>{btnText}</IonButton>
           <Spacer multiply={2} />
-          <IonRouterLink>{linkText}</IonRouterLink>
+          <IonRouterLink {...linkProps}>{linkText}</IonRouterLink>
         </div>
       </div>
       <div className={styles.visual}>
@@ -47,11 +58,14 @@ export const Entry: React.FC<EntryProps> = ({ title, slug, body, btnText, linkTe
         </div>
       </div>
       <div className={styles.sponsors}>
-        <Typography size="h4" elem="h4">
-          {sponsorsTitle}
-        </Typography>
+        {sponsors.length >= 1 && (
+          <Typography size="h4" elem="h4">
+            {sponsorsTitle}
+          </Typography>
+        )}
+
         <ul className={styles.sponsorsList}>
-          {sponsors.map(({ link, src, alt }) => (
+          {sponsors.map(({ src, alt }) => (
             <li key={src} className={styles.sponsorsListItem}>
               <img src={src} alt={alt} />
             </li>
