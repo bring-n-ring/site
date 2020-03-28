@@ -112,8 +112,18 @@
   }
 }
 
+@media (min-width: 1024px) {
+  .wrap {
+    min-height: 700px;
+    padding: 0 calc(var(--base-spacing) * 15);
+  }
+  .content {
+    margin: 0;
+  }
+}
 @media (min-width: 1200px) {
   .wrap {
+    min-height: 100vh;
     padding: 0 calc(var(--base-spacing) * 15);
   }
 
