@@ -67,6 +67,14 @@
 }
 
 @media (min-width: 767px) {
+  .content {
+    max-width: 600px;
+    margin-bottom: calc(var(--base-spacing) * 15);
+  }
+  .contentDeco {
+    top: -30px;
+    height: 300px;
+  }
   .description,
   .phone {
     display: inline-block;
