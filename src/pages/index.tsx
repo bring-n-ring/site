@@ -6,8 +6,6 @@ import Footer from '../components/footer/Footer'
 import entryData from '../content/home/sections/entry.yaml'
 import instaData from '../content/home/sections/insta.yaml'
 import ourMission from '../content/home/sections/our-mission.yaml'
-import footerProps from '../content/home/footer.yml'
-import content from '../content/home/general.yml'
 import { HubspotForm } from '../components/hubspot-form/HubspotForm'
 
 const IndexPage = () => {
@@ -32,8 +30,8 @@ const IndexPage = () => {
           <Insta {...instaData} />
         </div>
         <OurMission {...ourMission} />
-        <HubspotForm onClose={onClickHideForm} title={content.formTitle} body={content.formBody} visible={formVisible} />
-        <Footer {...footerProps} btnProps={{ onclick: onClickShowForm }} />
+        <HubspotForm onClose={onClickHideForm} visible={formVisible} />
+        <Footer btnProps={{ onclick: onClickShowForm }} />
       </Page>
     </IndexLayout>
   )
