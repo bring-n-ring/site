@@ -49,6 +49,18 @@ const AppDescription: React.FC<AppDescriptionProps> = ({ title, body, btnText, s
       sliderDescription.current.slidePrev()
     }
   }
+  const phoneSlideChanged = async () => {
+    if (sliderDescription.current && sliderPhone.current) {
+      sliderDescription.current.slideTo(await sliderPhone.current.getActiveIndex())
+    }
+  }
+
+  const descriptionSlideChanged = async () => {
+    if (sliderPhone.current && sliderDescription.current) {
+      sliderPhone.current.slideTo(await sliderDescription.current.getActiveIndex())
+    }
+  }
+
   return (
     <div className={styles.wrap}>
       <div className={styles.content}>
@@ -65,7 +77,7 @@ const AppDescription: React.FC<AppDescriptionProps> = ({ title, body, btnText, s
       <div className={styles.width}>
         <Phone>
           <IonContent>
-            <IonSlides options={slideOptsPhone} key="demo-phone" ref={sliderPhone}>
+            <IonSlides options={slideOptsPhone} key="demo-phone" ref={sliderPhone} onIonSlideDidChange={phoneSlideChanged}>
               {slides.map(slide => (
                 <IonSlide className={styles.phoneSlide} key={slide.src}>
                   <div>
@@ -78,7 +90,7 @@ const AppDescription: React.FC<AppDescriptionProps> = ({ title, body, btnText, s
         </Phone>
       </div>
       <div className={styles.description}>
-        <IonSlides options={slideOpts} key="demo-decription" ref={sliderDescription}>
+        <IonSlides options={slideOpts} key="demo-decription" ref={sliderDescription} onIonSlideDidChange={descriptionSlideChanged}>
           {slides.map(slide => (
             <IonSlide key={slide.title}>
               <Typography className={styles.title} size="h2">
