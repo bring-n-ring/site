@@ -1,9 +1,12 @@
 import * as React from 'react'
 import { Typography, Spacer, IonButton } from '@bring-n-ring/components'
 import '@bring-n-ring/components/css/ion-button.css'
+import '@bring-n-ring/components/css/typography.css'
 import { IonRouterLink } from '@ionic/react'
 import styles from './entry.module.css'
-import { MainImage, SideImage } from './components'
+import { SideImage } from './components'
+import { MainImage } from '../../components/MainImage'
+import Logo from '../../content/images/logos/logo.svg'
 
 export type EntryProps = {
   title: string
@@ -33,13 +36,15 @@ export const Entry: React.FC<EntryProps> = ({
 }) => {
   return (
     <div className={`${styles.wrap} md`}>
+      <div className={styles.head}>
+        <div className={styles.headCircle} />
+        <Logo className={styles.headLogo} />
+      </div>
       <div className={styles.content}>
         <Typography className={styles.title} color="primary" size="h1">
           {title}
         </Typography>
-        <Typography className={styles.subTitle} size="h4">
-          {slug}
-        </Typography>
+        <Typography size="h4">{slug}</Typography>
         <Typography className={styles.body} size="p">
           {body}
         </Typography>

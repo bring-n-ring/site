@@ -1,7 +1,9 @@
 import React, { createRef, useState } from 'react'
+import Footer from '../components/footer/Footer'
 import { HubspotForm } from '../components/hubspot-form/HubspotForm'
 import Page from '../components/Page'
-import content from '../content/home/general.yml'
+import footerProps from '../content/home/footer.yaml'
+import content from '../content/home/general.yaml'
 import appDescriptionData from '../content/home/sections/app-description.yaml'
 import entryData from '../content/home/sections/entry.yaml'
 import instaData from '../content/home/sections/insta.yaml'
@@ -20,6 +22,8 @@ const IndexPage = () => {
   }
   const $second = createRef()
   const scrollToSecond = () => {
+    // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+    // @ts-ignore
     $second.current.scrollIntoView({ behavior: 'smooth', block: 'end', inline: 'nearest' })
   }
   return (
@@ -32,6 +36,7 @@ const IndexPage = () => {
         <Insta {...instaData} />
         <OurMission {...ourMission} />
         <HubspotForm onClose={onClickHideForm} title={content.formTitle} body={content.formBody} visible={formVisible} />
+        <Footer {...footerProps} btnProps={{ onclick: onClickShowForm }} />
       </Page>
     </IndexLayout>
   )
