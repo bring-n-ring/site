@@ -50,7 +50,7 @@
     "@bring-n-ring/components": "0.0.11",
     "@emotion/core": "^10.0.28",
     "@emotion/styled": "^10.0.27",
-    "@ionic/react": "^5.0.0-rc.5",
+    "@ionic/react": "^5.0.7",
     "babel-plugin-styled-components": "^1.10.7",
     "classnames": "^2.2.6",
     "gatsby": "^2.20.9",
@@ -82,6 +82,7 @@
     "react-dom": "^16.13.1",
     "react-helmet": "^5.2.1",
     "react-intl": "^4.3.1",
+    "terser": "3.14.1",
     "typescript": "^3.8.3"
   },
   "devDependencies": {
