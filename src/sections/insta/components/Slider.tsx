@@ -43,7 +43,7 @@ export const Slider: React.FC = () => {
           }
         }
       `}
-      render={data => {
+      render={(data) => {
         return (
           <div className={styles.wrap}>
             <IonSlides ref={$slider} className={styles.slider} options={slideOpts}>
