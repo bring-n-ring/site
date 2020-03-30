@@ -41,6 +41,11 @@
       "npm run prettier"
     ]
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
   "dependencies": {
     "@bring-n-ring/components": "0.0.11",
     "@emotion/core": "^10.0.28",
