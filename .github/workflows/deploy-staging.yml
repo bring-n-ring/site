@@ -14,7 +14,10 @@ jobs:
         run: npm ci
       - name: Build gatsby project
         run: npm run build
-      - name: Deploy to Firebase production
+      - name: Build gatsby project
+        run: >
+          sed -i '3i "site": "bring-and-ring-staging",' ./firebase.json
+      - name: Deploy to Firebase staging
         uses: w9jds/firebase-action@master
         with:
           args: deploy --only hosting:bring-and-ring-staging
