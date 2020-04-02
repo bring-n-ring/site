@@ -1,10 +1,10 @@
-const path = require('path')
-// use same webpack coming from gatsby
-// eslint-disable-next-line import/no-extraneous-dependencies
-const webpack = require('webpack')
+import path from 'path'
+import * as webpack from 'webpack'
 
-exports.onCreateNode = ({ node, actions, getNode }) => {
-  const { createNodeField } = actions
+import { Actions } from 'gatsby'
+
+export const onCreateNode = ({ node, actions, getNode }: { actions: Actions; node: any; getNode: any }) => {
+  const { createNodeField } = actions as Actions
 
   // Sometimes, optional fields tend to get not picked up by the GraphQL
   // interpreter if not a single content uses it. Therefore, we're putting them
@@ -43,7 +43,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   }
 }
 
-exports.createPages = async ({ graphql, actions }) => {
+export const createPages = async ({ graphql, actions }: { actions: Actions; graphql: any }) => {
   const { createPage } = actions
 
   const allMarkdown = await graphql(`
@@ -88,7 +88,7 @@ exports.createPages = async ({ graphql, actions }) => {
   })
 }
 
-exports.onCreateWebpackConfig = ({ actions }) => {
+export const onCreateWebpackConfig = ({ actions }: { actions: Actions }) => {
   actions.setWebpackConfig({
     plugins: [
       new webpack.DefinePlugin({
